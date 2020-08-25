@@ -19,6 +19,12 @@ public class Individual extends TaxPayer{
 	
 	@Override
 	public double tax() {
-		
+		double result = 0.0;
+		if(super.getAnualIncome()<20000.00) {
+			result = (super.getAnualIncome() * 0.15) - (healthExpenditures * 0.5);
+		}else {
+			result = (super.getAnualIncome() * 0.25) - (healthExpenditures * 0.5);
+		}
+		return result;
 	}
 }
